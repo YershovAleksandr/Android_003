@@ -1,4 +1,4 @@
-package course.labs.intentslab;
+package com.ssdd.lab3;
 
 import android.app.Activity;
 import android.content.Intent;

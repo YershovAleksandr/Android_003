@@ -66,17 +66,15 @@ public class ActivityLoaderActivity extends Activity {
         
 		Log.i(TAG,"Entered startExplicitActivation()");
 		
-		// TODO - Create a new intent to launch the ExplicitlyLoadedActivity class
+		// DO - Create a new intent to launch the ExplicitlyLoadedActivity class
 		Intent explicitIntent = null;
 
 		explicitIntent = new Intent(getBaseContext(), ExplicitlyLoadedActivity.class);
 
-		// TODO - Start an Activity using that intent and the request code defined above
+		// DO - Start an Activity using that intent and the request code defined above
 
-		//GET_TEXT_REQUEST_CODE
-        //explicitIntent
 		startActivityForResult(explicitIntent, GET_TEXT_REQUEST_CODE);
-        //startActivity(explicitIntent);
+
 	}
     
 	// Start a Browser Activity to view a web page or its URL

@@ -53,7 +53,7 @@ public class ExplicitTest extends
 				"ExplicitTest:"
 						+ "Section One:"
 						+ "ExplicitlyLoadedActivity was not launched by the correct Intent",
-				"Intent { cmp=course.labs.intentslab/.ExplicitlyLoadedActivity }",
+				"Intent { cmp=com.ssdd.lab3/.ExplicitlyLoadedActivity }",
 				solo.getCurrentActivity().getIntent().toString());
 
 		// =================== Section Two ==========================

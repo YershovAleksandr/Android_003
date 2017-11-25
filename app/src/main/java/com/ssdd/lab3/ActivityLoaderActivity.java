@@ -12,9 +12,10 @@ import android.widget.TextView;
 
 public class ActivityLoaderActivity extends Activity {
     
-	static private final int GET_TEXT_REQUEST_CODE = 1;
+	static public final int GET_TEXT_REQUEST_CODE = 1;
 	static private final String URL = "http://www.google.com";
 	static private final String TAG = "Lab-Intents";
+	public static final String STR_ID = "x42";
     
 	// For use with app chooser
 	static private final String CHOOSER_TEXT = "Load " + URL + " with:";
@@ -71,9 +72,11 @@ public class ActivityLoaderActivity extends Activity {
 		explicitIntent = new Intent(getBaseContext(), ExplicitlyLoadedActivity.class);
 
 		// TODO - Start an Activity using that intent and the request code defined above
-		
+
+		//GET_TEXT_REQUEST_CODE
         //explicitIntent
-        startActivity(explicitIntent);
+		startActivityForResult(explicitIntent, GET_TEXT_REQUEST_CODE);
+        //startActivity(explicitIntent);
 	}
     
 	// Start a Browser Activity to view a web page or its URL
@@ -103,17 +106,21 @@ public class ActivityLoaderActivity extends Activity {
     
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        
+
+		super.onActivityResult(requestCode, resultCode, data);
+
 		Log.i(TAG, "Entered onActivityResult()");
 		
-		// TODO - Process the result only if this method received both a
+		// DO - Process the result only if this method received both a
 		// RESULT_OK result code and a recognized request code
 		// If so, update the Textview showing the user-entered text.
 
-	
-    
-    
-    
+		if (RESULT_OK == resultCode && GET_TEXT_REQUEST_CODE == requestCode)
+		{
+			String str = data.getStringExtra(STR_ID);
+
+			mUserTextView.setText(str);
+		}
     
     }
 }

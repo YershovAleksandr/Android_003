@@ -54,5 +54,7 @@ public class ExplicitlyLoadedActivity extends Activity {
 		
 		// TODO - Finish the Activity
 
+		finish();
+
 	}
 }

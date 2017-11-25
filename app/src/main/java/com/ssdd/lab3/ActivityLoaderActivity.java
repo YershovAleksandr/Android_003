@@ -67,11 +67,13 @@ public class ActivityLoaderActivity extends Activity {
 		
 		// TODO - Create a new intent to launch the ExplicitlyLoadedActivity class
 		Intent explicitIntent = null;
-		
+
+		explicitIntent = new Intent(getBaseContext(), ExplicitlyLoadedActivity.class);
+
 		// TODO - Start an Activity using that intent and the request code defined above
 		
-        
-        
+        //explicitIntent
+        startActivity(explicitIntent);
 	}
     
 	// Start a Browser Activity to view a web page or its URL
@@ -82,7 +84,7 @@ public class ActivityLoaderActivity extends Activity {
         
 		// TODO - Create a base intent for viewing a URL
 		// (HINT:  second parameter uses Uri.parse())
-		
+
         Intent baseIntent = null;
 		
 		// TODO - Create a chooser intent, for choosing which Activity
